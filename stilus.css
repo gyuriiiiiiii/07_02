@@ -1,0 +1,106 @@
+*{
+    /**/
+    box-sizing: border-box;
+    /*kereten belüli távolság*/
+    padding: 0px;
+    /*kereten kívüli távolság*/
+    margin: 0px;
+    border-radius: 10px;
+    color: white;
+}
+
+main>*{
+    height: 350px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+    opacity: 0.4;   
+}
+
+main>*:hover{
+    opacity: 1;
+}
+
+header{
+    grid-area: h;
+    background-image: url("img/dandelion.jpg");
+}
+nav{
+    grid-area: n;
+    background-image: url("img/dand2.jpg");
+}
+aside{
+    grid-area: as;
+    background-image: url("img/dand3.jpg");
+}
+
+article{
+    grid-area: ar;
+    background-image: url("img/dandy2.gif");
+}
+
+footer{
+    grid-area: f;
+    background-image: url("img/dandy.gif");
+}
+main
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    'h n n'
+    'as f ar'
+    ;
+    gap: 10px;
+    margin: 10px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+article, aside, header, footer{
+    text-align: right;
+}
+
+a{
+    text-decoration: none;
+    padding-right: 15px;
+}
+
+li{
+    list-style-type: none;
+}
+/*verzió1
+ol{
+    display: flex;
+}
+*/
+
+ol li{
+    display: inline;
+}
+
+ol{
+    background-color: rgba(42, 47, 72, 0.7);
+    padding: 10px;
+}
+
+/*mobilos nézet*/
+@media only screen and (max-width: 600px) {
+    /*a{
+        background-color: aquamarine;
+    }*/
+    main
+    {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    'h'
+    'n'
+    'as'
+    'f'
+    'ar'
+    ;
+    /*vagy display: block;*/
+    }
+}
